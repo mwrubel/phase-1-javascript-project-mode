@@ -6,6 +6,11 @@ const dollarButton = document.getElementById('Dollars')
 const euroButton = document.getElementById('Euros')
 const poundButton = document.getElementById('Pounds')
 
+//set the html strings = js variables
+const usdResult = document.getElementById('USDBTC')
+const eurResult = document.getElementById('EURBTC')
+const gbpResult = document.getElementById('GBPBTC')
+
 //fetch, then parse to json, then display price in relative currency when button clicked
 dollarButton.addEventListener('click', () => {
     fetch(url)
@@ -13,7 +18,7 @@ dollarButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        console.log(data)
+        usdResult.innerHTML = eurResult + data.rate
         //.target.querySelector
         //debugger
     })
@@ -25,7 +30,7 @@ euroButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        console.log(data)
+        eurResult.innerHTML = eurResult + ": " + eurResult.data.symbol + eurResult.data.rate
         //debugger
     })
 })
@@ -36,7 +41,7 @@ poundButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        console.log(data)
+        gbpResult.innerHTML = gbpResult + ": " + gbpResult.data.symbol + gbpResult.data.rate
         //debugger
     })
 })
