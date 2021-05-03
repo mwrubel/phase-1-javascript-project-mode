@@ -18,7 +18,7 @@ dollarButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        usdResult.innerHTML = eurResult + data.rate
+        usdResult.innerHTML = usdResult + ": " + data.symbol + data.rate
         //.target.querySelector
         //debugger
     })
@@ -30,7 +30,7 @@ euroButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        eurResult.innerHTML = eurResult + ": " + eurResult.data.symbol + eurResult.data.rate
+        eurResult.innerHTML = eurResult + ": " + data.symbol + data.rate
         //debugger
     })
 })
@@ -41,7 +41,7 @@ poundButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        gbpResult.innerHTML = gbpResult + ": " + gbpResult.data.symbol + gbpResult.data.rate
+        gbpResult.innerHTML = gbpResult + ": " + data.symbol + data.rate
         //debugger
     })
 })
