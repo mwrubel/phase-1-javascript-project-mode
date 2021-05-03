@@ -1,6 +1,7 @@
 //set api equal to a variable so it can be accessed easily later
 const url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
 
+
 //set the html buttons equal to variables in JS
 const dollarButton = document.getElementById('Dollars')
 const euroButton = document.getElementById('Euros')
@@ -11,14 +12,18 @@ const usdResult = document.getElementById('USDBTC')
 const eurResult = document.getElementById('EURBTC')
 const gbpResult = document.getElementById('GBPBTC')
 
-//fetch, then parse to json, then display price in relative currency when button clicked
+//set h2 = disclaimer
+const closer = document.getElementById('clause')
+
+
+//fetch: get, then parse to json, then display price in relative currency when button clicked
 dollarButton.addEventListener('click', () => {
     fetch(url)
     .then(response => {
         return response.json()
     })
     .then(data => {
-        usdResult.innerHTML = usdResult + ": " + data.symbol + data.rate
+        let r1 = usdResult.innerHTML + ": " + data.bpi.USD.symbol + data.bpi.USD.rate
         //.target.querySelector
         //debugger
     })
@@ -30,7 +35,7 @@ euroButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        eurResult.innerHTML = eurResult + ": " + data.symbol + data.rate
+        let r2 = eurResult.innerHTML + ": " + data.bpi.EUR.symbol + data.bpi.EUR.rate
         //debugger
     })
 })
@@ -41,7 +46,7 @@ poundButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        gbpResult.innerHTML = gbpResult + ": " + data.symbol + data.rate
+        let r3 = gbpResult.innerHTML + ": " + data.bpi.GBP.symbol + data.bpi.GBP.rate
         //debugger
     })
 })
