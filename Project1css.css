@@ -9,3 +9,8 @@ body {
     text-shadow: 55mm;
     font-size: 12pt;
 }
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

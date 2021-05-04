@@ -13,7 +13,7 @@ const eurResult = document.getElementById('EURBTC')
 const gbpResult = document.getElementById('GBPBTC')
 
 //set h2 = disclaimer
-const closer = document.getElementById('clause')
+//const closer = document.getElementById('clause')
 
 
 //fetch: get, then parse to json, then display price in relative currency when button clicked
