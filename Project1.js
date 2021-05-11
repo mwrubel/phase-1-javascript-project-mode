@@ -7,13 +7,11 @@ const dollarButton = document.getElementById('Dollars')
 const euroButton = document.getElementById('Euros')
 const poundButton = document.getElementById('Pounds')
 
-//set the html strings = js variables
-const usdResult = document.getElementById('USDBTC')
-const eurResult = document.getElementById('EURBTC')
-const gbpResult = document.getElementById('GBPBTC')
 
-//set h2 = disclaimer
-//const closer = document.getElementById('clause')
+//set the html strings = js variables
+let usdResult = document.getElementById('USDBTC')
+let eurResult = document.getElementById('EURBTC')
+let gbpResult = document.getElementById('GBPBTC')
 
 
 //fetch: get, then parse to json, then display price in relative currency when button clicked
@@ -23,11 +21,12 @@ dollarButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        let r1 = usdResult.innerHTML + ": " + data.bpi.USD.symbol + data.bpi.USD.rate
-        //.target.querySelector
-        //debugger
+        //check to see if relative h1 html element hasn't already been changed, if so display bitcoin price
+        if (usdResult.innerHTML="Bitcoin price in USD")
+        usdResult.innerHTML = usdResult.innerHTML + ": " + data.bpi.USD.symbol + data.bpi.USD.rate
     })
 })
+
 
 euroButton.addEventListener('click', () => {
     fetch(url)
@@ -35,10 +34,11 @@ euroButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        let r2 = eurResult.innerHTML + ": " + data.bpi.EUR.symbol + data.bpi.EUR.rate
-        //debugger
+        if (eurResult.innerHTML="Bitcoin price in EUR")
+        eurResult.innerHTML = eurResult.innerHTML + ": " + data.bpi.EUR.symbol + data.bpi.EUR.rate
     })
 })
+
 
 poundButton.addEventListener('click', () => {
     fetch(url)
@@ -46,20 +46,7 @@ poundButton.addEventListener('click', () => {
         return response.json()
     })
     .then(data => {
-        let r3 = gbpResult.innerHTML + ": " + data.bpi.GBP.symbol + data.bpi.GBP.rate
-        //debugger
+        if (gbpResult.innerHTML="Bitcoin price in GBP")
+        gbpResult.innerHTML = gbpResult.innerHTML + ": " + data.bpi.GBP.symbol + data.bpi.GBP.rate   
     })
 })
-
-/*const dollarButton = document.getElementById('Dollars').onclick = () => {
-    fetch(url)
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        //console.log(data)
-        alert(data)
-        debugger
-    })
-}
-*/
